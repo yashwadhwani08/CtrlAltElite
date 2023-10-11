@@ -18,11 +18,33 @@
   </div>
 </div> -->
 <mat-card>
-    <mat-card-content>
-      <p>Client Name: {{clientName}}</p>
-    </mat-card-content>
-    <mat-card-content>
-        <p>Therapist Name: {{therapistName}}</p>
-      </mat-card-content>
+  <mat-card-content>
+    <p>Client Name: {{ clientName }}</p>
+  </mat-card-content>
+  <mat-card-content>
+    <p>Therapist Name: {{ therapistName }}</p>
+  </mat-card-content>
+  <mat-card-content>
+    <p>Address: {{ clientAddress }}</p>
+  </mat-card-content>
+  <mat-card-content>
+    <p>Scheduled Check in: {{ scheduledCheckIn }}</p>
+  </mat-card-content>
+  <mat-card-content>
+    <p>Scheduled Check out: {{ scheduledCheckOut }}</p>
+  </mat-card-content>
 </mat-card>
+
+<section>
+    <div class="example-label">Status</div>
+    <div class="example-button-row">
+      <!-- <button mat-button>Basic</button> -->
+      <button mat-button color="primary">Check In</button>
+      <button mat-button color="accent">Check Out</button>
+      <button mat-button color="warn">SOS</button>
+      <!-- <button mat-button disabled>Disabled</button> -->
+      <!-- <a mat-button href="https://www.google.com/" target="_blank">Link</a> -->
+    </div>
+  </section>
+  <mat-divider></mat-divider>
 <!-- </mat-grid-list> -->

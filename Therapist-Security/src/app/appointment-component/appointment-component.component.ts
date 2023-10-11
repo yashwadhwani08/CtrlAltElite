@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./appointment-component.component.css'],
 })
 export class AppointmentComponentComponent {
-  clientName: string = "Anurag Dash";
-  therapistName: string = "Dr. Prashant Abhang";  
+  clientName: string = 'Anurag Dash';
+  therapistName: string = 'Dr. Prashant Abhang';
+  clientAddress: string = 'Kharadi, Pune';
+  scheduledCheckIn: any = '9:00 a.m.';
+  scheduledCheckOut: any = '11:00 a.m.';
 }
