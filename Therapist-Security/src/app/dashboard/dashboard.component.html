@@ -9,6 +9,7 @@
   </div>
 <div class="row">
 
+  
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
@@ -39,6 +40,6 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr (click)="displayData(row)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 </div>

@@ -46,6 +46,9 @@ export class DashboardComponent {
 
   }
 
+  displayData(row:any){
+    console.log(row);
+  }
 
   createChart(){
     this.chart = new Chart("MyChart", {
