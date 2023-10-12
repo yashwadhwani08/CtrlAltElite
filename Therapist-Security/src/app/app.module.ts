@@ -19,7 +19,7 @@ import { TherepistComponent } from './therepist/therepist.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'appointment', component: AppointmentComponentComponent },
+  { path: 'appointment/1', component: AppointmentComponentComponent },
   { path: 'therepist', component: TherepistComponent },
 ];
 

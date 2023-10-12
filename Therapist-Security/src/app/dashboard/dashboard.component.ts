@@ -122,7 +122,7 @@ export class DashboardComponent implements OnInit {
         datasets: [
           {
             label: 'Count',
-            data: [20, 11, 4, 2, 1, 2],
+            data: [1, 3, 1, 0, 0, 0],
             backgroundColor: [
               'blue',
               'yellow',

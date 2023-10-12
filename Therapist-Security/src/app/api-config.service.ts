@@ -9,12 +9,13 @@ import { switchMap } from 'rxjs';
 export class ApiConfigService {
   private configUrl = 'assets/api-config.json';
   public apis: any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   setConfig() {
     this.apis = this.http.get(this.configUrl);
   }
 
   getConfig(): Observable<any> {
+    return this.http.get(this.configUrl);
     return this.apis;
   }
 }
@@ -28,7 +29,8 @@ export class ApiDataServices {
     private http: HttpClient,
     private apiConfigService: ApiConfigService
   ) {
-    this.apiConf = this.apiConfigService.apis;
+    this.apiConf = this.apiConfigService.getConfig();
+    // this.apiConf = this.apiConfigService.apis;
   }
   postRequest(data: any, api: string): Observable<any> {
     return this.apiConf.pipe(
@@ -47,15 +49,18 @@ export class ApiDataServices {
           const headers = new HttpHeaders({
             'Content-Type': 'application/json',
           });
-          return this.http.post(Url, data, { headers, observe: 'response' });
+          return this.http.post(Url, data, { headers });
+
+          // return this.http.post(Url, data, { headers, observe: 'response' });
         } else {
           let getUrl = Object.keys(data).length
             ? Url.replace('firstParam', data.firstParam).replace(
-              'secondParam',
-              data.secondParam
-            )
+                'secondParam',
+                data.secondParam
+              )
             : Url;
-          return this.http.get(getUrl, { observe: 'response' });
+          return this.http.get(getUrl);
+          // return this.http.get(getUrl, { observe: 'response' });
         }
       })
     );
