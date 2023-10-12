@@ -10,6 +10,12 @@ section {
   font-size: xxx-larger;
 }
 
+button{
+    margin-top: 1%;
+    margin-right: 0.5%;
+    font-size: xx-large;
+}
+
 .example-button-row {
   display: table-cell;
   max-width: 600px;
