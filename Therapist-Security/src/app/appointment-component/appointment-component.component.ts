@@ -77,8 +77,23 @@ export class AppointmentComponentComponent implements OnInit {
 
   isSOSDisabled(): boolean {
     if (
-      this.appointment.status == constants.appointStatusScheduled ||
-      this.appointment.status == constants.appointStatusCompleted
+      this.appointment.status == constants.appointStatusAlert
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  isEmegencyAppointment() {
+    if (this.appointment.status != constants.appointStatusAlert){
+      return true
+    }
+    return false;
+  }
+
+  showActualCheckInOut():boolean {
+    if (
+      this.appointment.status == constants.appointStatusScheduled 
     ) {
       return true;
     }

@@ -1,0 +1,10 @@
+{
+    "server": {
+        "server": "https://cntrltestingapplication.azurewebsites.net/"
+    },
+    "activeServer": "server",
+    "api":{
+        "appointments": {"url": "appointment/", "method":"get"},
+        "appointment": {"url": "appointment/firstParam/", "method":"get"}
+    }
+}
