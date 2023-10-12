@@ -27,6 +27,7 @@ export class AppointmentComponentComponent implements OnInit {
       checkoutTime: '11:00 a.m.',
       actualCheckinTime: '',
       actualCheckoutTime: '',
+      therapistContact: '1.01',
       status: constants.appointStatusScheduled,
     };
   }

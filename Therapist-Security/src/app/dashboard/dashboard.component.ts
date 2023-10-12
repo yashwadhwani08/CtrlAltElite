@@ -1,25 +1,149 @@
 import { Component, OnInit } from '@angular/core';
+import { Appointment } from '../appointment.model';
 import Chart from 'chart.js/auto';
 //import * as bootstrap from 'bootstrap';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
+const APPOINTMENT_DATA: Appointment[] = [
+  {
+    id: 1,
+    clientName: 'c1',
+    therapistName: 'Hydrogen',
+    therapistContact: '1.0079',
+    status: 'H',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
+  {
+    id: 2,
+    clientName: 'c1',
+    therapistName: 'Helium',
+    therapistContact: '4.0026',
+    status: 'He',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
+  {
+    id: 3,
+    clientName: 'c1',
+    therapistName: 'Lithium',
+    therapistContact: '6.941',
+    status: 'Li',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
+  {
+    id: 4,
+    clientName: 'c1',
+    therapistName: 'Beryllium',
+    therapistContact: '9.0122',
+    status: 'Be',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
+  {
+    id: 5,
+    clientName: 'c1',
+    therapistName: 'Boron',
+    therapistContact: '10.811',
+    status: 'B',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
+  {
+    id: 6,
+    clientName: 'c1',
+    therapistName: 'Carbon',
+    therapistContact: '12.0107',
+    status: 'C',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
+  {
+    id: 7,
+    clientName: 'c1',
+    therapistName: 'Nitrogen',
+    therapistContact: '14.0067',
+    status: 'N',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
+  {
+    id: 8,
+    clientName: 'c1',
+    therapistName: 'Oxygen',
+    therapistContact: '15.9994',
+    status: 'O',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
+  {
+    id: 9,
+    clientName: 'c1',
+    therapistName: 'Fluorine',
+    therapistContact: '18.9984',
+    status: 'F',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
+  {
+    id: 10,
+    clientName: 'c1',
+    therapistName: 'Neon',
+    therapistContact: '20.1797',
+    status: 'Ne',
+    actualCheckinTime: 'yash',
+    actualCheckoutTime: 'yash',
+    therapistId: 1,
+    clientId: 1,
+    clientAddress: 'Kharadi',
+    checkinTime: '',
+    checkoutTime: '',
+  },
 ];
 
 @Component({
@@ -29,14 +153,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class DashboardComponent implements OnInit {
   public chart: any;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['id', 'clientName', 'therapistName', 'therapistContact', 'status'];
+  dataSource = APPOINTMENT_DATA;
 
   ngOnInit(): void {
     this.createChart();
   }
 
-  getAppointmentsData() {}
+  getAppointmentsData() { }
 
   displayData(row: any) {
     console.log(row);

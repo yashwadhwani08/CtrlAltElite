@@ -10,4 +10,5 @@ export interface Appointment {
   actualCheckinTime:string;
   actualCheckoutTime:string;
   status: string;
+  therapistContact: string;
 }
