@@ -13,17 +13,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { TherepistComponent } from './therepist/therepist.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'appointment', component: AppointmentComponentComponent },
+  { path: 'therepist', component: TherepistComponent },
 ];
 
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, AppointmentComponentComponent],
+  declarations: [AppComponent, DashboardComponent, AppointmentComponentComponent, TherepistComponent],
 
   imports: [
     BrowserModule,
