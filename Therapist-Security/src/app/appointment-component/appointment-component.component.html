@@ -9,13 +9,13 @@
         <!-- <div align="center"> -->
         <div class="btn-group" role="group">
           <!-- <button mat-button>Basic</button> -->
-          <button color="primary" class="btn btn-primary" (click)="doCheckIn()" [disabled]="isCheckInDisabled()">
+          <button class="btn btn-primary" (click)="doCheckIn()" [disabled]="isCheckInDisabled()">
             Check In
           </button>
-          <button color="accent" class="btn btn-success" (click)="doCheckOut()" [disabled]="isCheckoutButtonDisabled()">
+          <button class="btn btn-success" (click)="doCheckOut()" [disabled]="isCheckoutButtonDisabled()">
             Check Out
           </button>
-          <button color="danger" class="btn btn-danger" (click)="doSOS()" [disabled]="isSOSDisabled()">
+          <button class="btn btn-danger" (click)="doSOS()" [disabled]="isSOSDisabled()">
             SOS
           </button>
           <!-- <button mat-button disabled>Disabled</button> -->
@@ -25,40 +25,49 @@
         <!-- </div> -->
       </mat-card>
 
-      <mat-card>
+      <div class="container">
         <div class="row">
-          <mat-card-content>
-            <div class="col-md-3">
-              <h3>Client Name: {{ appointment.clientName }} </h3>
-            </div>
-          </mat-card-content>
-          <mat-card-content>
-            <p>Therapist Name: {{ appointment.therapistName }}</p>
-          </mat-card-content>
-          <mat-card-content>
-            <p>Address: {{ appointment.clientAddress }}</p>
-          </mat-card-content>
-          <mat-card-content>
-            <p>Scheduled Check in: {{ appointment.checkinTime }}</p>
-          </mat-card-content>
-          <mat-card-content>
-            <p>Scheduled Check out: {{ appointment.checkoutTime }}</p>
-          </mat-card-content>
-          <mat-card-content>
-            <p>Actual Check in: {{ appointment.actualCheckinTime }}</p>
-          </mat-card-content>
-          <mat-card-content>
-            <p>Actual Check out: {{ appointment.actualCheckoutTime }}</p>
-          </mat-card-content>
+          <div class="col">
+            <h3>Client Name: {{ appointment.clientName }}</h3>
+          </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <h3>Therapist Name: {{ appointment.therapistName }}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Address: {{ appointment.clientAddress }}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Scheduled Check in: {{ appointment.checkinTime }}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Scheduled Check out: {{ appointment.checkoutTime }}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Actual Check in: {{ appointment.actualCheckinTime }}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Actual Check out: {{ appointment.actualCheckoutTime }}</h3>
+          </div>
+        </div>
+      </div>
 
-        <mat-card>
-          <mat-card-content>
-            <h1>Appointment Status : {{ appointment.status | titlecase }}</h1>
-          </mat-card-content>
-        </mat-card>
 
-
+      <mat-card>
+        <mat-card-content>
+          <h1>Appointment Status : {{ appointment.status | titlecase }}</h1>
+        </mat-card-content>
       </mat-card>
     </div>
   </div>
