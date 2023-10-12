@@ -31,7 +31,6 @@
       <div class="row">
         <div class="col-md-12">
           <div class="panel-title"><h3>Status: {{ appointment.status | titlecase }}</h3></div>
-          
         </div>
       </div>
       <div class="row">
@@ -71,6 +70,50 @@
         </table>
       </div>
 
+      <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h3>Escalation Details</h3></div>
+      </div>
+      <div class="panel-title" ><h6>Call To Therepist</h6></div>
+      <div class="panel-body" [hidden]="isEmegencyAppointment()">
+        <table class="table">
+          <tr>
+          <td>Call 1 Time:</td>
+          <td>2023-08-12 16:30:00 IST</td>
+          <td>Unanswered</td>
+          </tr>
+          <tr>          
+          <td>Call 2 Time:</td>
+          <td>2023-08-12 16:30:00 IST</td>
+          <td>Unanswered</td>
+          </tr>
+          <tr>          
+          <td>Call 1 Time:</td>
+          <td>2023-08-12 16:30:00 IST</td>
+          <td>Unanswered</td>
+          </tr>
+        </table>
+      </div>
+      <div class="panel-title" ><h6>Call To Escalation Matrix</h6></div>
+      <div class="panel-body" [hidden]="isEmegencyAppointment()">
+        <table class="table">
+          <tr>
+          <td>Call 1st Point Of Contact:</td>
+          <td>2023-08-12 16:30:00 IST</td>
+          <td>Answered</td>
+          </tr>
+          <tr>
+          <td>Call 2nd Point Of Contact:</td>
+          <td>-</td>
+          <td>-</td>
+          <tr>
+          <td>Call 2nd Point Of Contact:</td>
+          <td>-</td>
+          <td>-</td>
+          </tr>
+        </table>
+      </div>
+      </div>
     </div>
   </div>
 </div>

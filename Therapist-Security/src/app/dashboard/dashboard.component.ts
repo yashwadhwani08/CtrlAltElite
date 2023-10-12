@@ -38,6 +38,8 @@ export class DashboardComponent implements OnInit {
 
   getAppointmentsData() {}
 
+
+
   displayData(row: any) {
     console.log(row);
     //his.router.navigate(["/vendor-list/vendor/a/services/a/details/",sid]);
