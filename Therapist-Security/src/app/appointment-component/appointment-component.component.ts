@@ -84,6 +84,15 @@ export class AppointmentComponentComponent implements OnInit {
     return false;
   }
 
+  showActualCheckInOut():boolean {
+    if (
+      this.appointment.status == constants.appointStatusScheduled 
+    ) {
+      return true;
+    }
+    return false;
+  }
+
   isCheckoutButtonDisabled(): boolean {
     if (
       this.appointment.status == constants.appointStatusInProgress ||
