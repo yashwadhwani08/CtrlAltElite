@@ -19,15 +19,15 @@ export class AppointmentComponentComponent implements OnInit {
     this.appointment = {
       id: 1,
       therapistId: 1,
-      therapistName: 'Therepist-1',
+      therapistName: 'Abhang',
       clientId: 1,
-      clientName: 'Client-1',
-      clientAddress: 'Kharadi, Pune',
-      checkinTime: '9:00 a.m.',
-      checkoutTime: '11:00 a.m.',
+      clientName: 'Prashant',
+      clientAddress: 'Kharadi, Pune 411014',
+      checkinTime: '2023-08-12 18:00:00',
+      checkoutTime: '2023-08-12 19:00:00',
       actualCheckinTime: '',
       actualCheckoutTime: '',
-      therapistContact: '1.01',
+      therapistContact: '9999999999',
       status: constants.appointStatusScheduled,
     };
   }
