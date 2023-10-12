@@ -1,10 +1,18 @@
 <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
         <mat-card>
             <mat-card-content>
                 <h1>Appointment Details</h1>
             </mat-card-content>
+            <div class="example-button-row">
+                <!-- <button mat-button>Basic</button> -->
+                <button mat-raised-button color="primary"(click)="doCheckIn()" [disabled]="isCheckInDisabled()">Check In</button>
+                <button mat-raised-button  color="accent"(click)="doCheckOut()"  [disabled]="isCheckoutButtonDisabled()">Check Out</button>
+                <button mat-raised-button color="danger"(click)="doSOS()" [disabled]="isSOSDisabled()">SOS</button>
+                <!-- <button mat-button disabled>Disabled</button> -->
+                <!-- <a mat-button href="https://www.google.com/" target="_blank">Link</a> -->
+              </div>
         </mat-card>
     </div>
 </div>
