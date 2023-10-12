@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Appointment } from '../appointment.model';
 import Chart from 'chart.js/auto';
+import { ApiDataServices } from '../api-config.service';
 //import * as bootstrap from 'bootstrap';
 
-const APPOINTMENT_DATA: Appointment[] = [
+let APPOINTMENT_DATA: Appointment[] = [
   {
     id: 1,
     clientName: 'c1',
@@ -152,6 +153,10 @@ const APPOINTMENT_DATA: Appointment[] = [
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  APPOINTMENT_DATA: any;
+  constructor(private apiDataService: ApiDataServices){
+    this.fetchAppointments();
+  }
   public chart: any;
   displayedColumns: string[] = ['id', 'clientName', 'therapistName', 'therapistContact', 'status'];
   dataSource = APPOINTMENT_DATA;
@@ -201,5 +206,21 @@ export class DashboardComponent implements OnInit {
         aspectRatio: 2.5,
       },
     });
+  }
+
+  fetchAppointments(){
+    try{
+      this.apiDataService.postRequest({}, 'appointments')
+      .subscribe((response) => {
+        if(response.status == '200') {
+          this.APPOINTMENT_DATA = response.data;
+          console.log(this.APPOINTMENT_DATA);
+        }else{
+          console.log('error');
+        }
+      })
+    }catch(e){
+      console.log('error: ',e);
+    }
   }
 }
