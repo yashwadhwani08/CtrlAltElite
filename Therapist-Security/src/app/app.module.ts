@@ -9,6 +9,10 @@ import { AppointmentComponentComponent } from './appointment-component/appointme
 import { RouterModule, Routes } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
@@ -27,11 +31,14 @@ const appRoutes: Routes = [
     MatTableModule,
     MatCardModule,
     MatGridListModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
-    // NgbModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
