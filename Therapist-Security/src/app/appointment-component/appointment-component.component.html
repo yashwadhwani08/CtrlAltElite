@@ -70,12 +70,12 @@
         </table>
       </div>
 
-      <div class="row">
+      <div class="row" [hidden]="isEmegencyAppointment()">
       <div class="panel panel-default">
         <div class="panel-heading"><h3>Escalation Details</h3></div>
       </div>
       <div class="panel-title" ><h6>Call To Therepist</h6></div>
-      <div class="panel-body" [hidden]="isEmegencyAppointment()">
+      <div class="panel-body" >
         <table class="table">
           <tr>
           <td>Call 1 Time:</td>
