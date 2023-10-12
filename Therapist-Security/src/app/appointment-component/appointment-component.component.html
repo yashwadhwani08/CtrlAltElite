@@ -6,28 +6,39 @@
 
 <mat-card>
   <mat-card-content>
-    <p>Client Name: {{ clientName }}</p>
+    <p>Client Name: {{ appointment.clientName }}</p>
   </mat-card-content>
   <mat-card-content>
-    <p>Therapist Name: {{ therapistName }}</p>
+    <p>Therapist Name: {{ appointment.therapistName }}</p>
   </mat-card-content>
   <mat-card-content>
-    <p>Address: {{ clientAddress }}</p>
+    <p>Address: {{ appointment.clientAddress }}</p>
   </mat-card-content>
   <mat-card-content>
-    <p>Scheduled Check in: {{ scheduledCheckIn }}</p>
+    <p>Scheduled Check in: {{ appointment.checkinTime }}</p>
   </mat-card-content>
   <mat-card-content>
-    <p>Scheduled Check out: {{ scheduledCheckOut }}</p>
+    <p>Scheduled Check out: {{ appointment.checkoutTime }}</p>
+  </mat-card-content>
+  <mat-card-content>
+    <p>Actual Check in: {{ appointment.actualCheckinTime }}</p>
+  </mat-card-content>
+  <mat-card-content>
+    <p>Actual Check out: {{ appointment.actualCheckoutTime }}</p>
   </mat-card-content>
 
+  <mat-card>
+    <mat-card-content>
+      <h1>Appointment Status   : {{ appointment.status | titlecase }} </h1>
+    </mat-card-content>
+  </mat-card>
 
-  <div class="example-label">Status</div>
+
   <div class="example-button-row">
     <!-- <button mat-button>Basic</button> -->
-    <button mat-button color="primary">Check In</button>
-    <button mat-button color="accent">Check Out</button>
-    <button mat-button color="warn">SOS</button>
+    <button mat-raised-button color="primary"(click)="doCheckIn()" [disabled]="isCheckInDisabled()">Check In</button>
+    <button mat-raised-button  color="accent"(click)="doCheckOut()"  [disabled]="isCheckoutButtonDisabled()">Check Out</button>
+    <button mat-raised-button color="danger"(click)="doSOS()" [disabled]="isSOSDisabled()">SOS</button>
     <!-- <button mat-button disabled>Disabled</button> -->
     <!-- <a mat-button href="https://www.google.com/" target="_blank">Link</a> -->
   </div>
