@@ -2,6 +2,7 @@ section {
   display: table;
 }
 
+
 .example-label {
   display: table-cell;
   font-size: 14px;
@@ -16,6 +17,9 @@ button{
     font-size: xx-large;
 }
 
+.disabled {
+    color:grey
+}
 .example-button-row {
   display: table-cell;
   max-width: 600px;

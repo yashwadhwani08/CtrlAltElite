@@ -27,7 +27,7 @@ export class AppointmentComponentComponent implements OnInit {
       checkoutTime: '11:00 a.m.',
       actualCheckinTime: '',
       actualCheckoutTime: '',
-      status: constants.appointStatusAlert,
+      status: constants.appointStatusScheduled,
     };
   }
 
@@ -76,7 +76,7 @@ export class AppointmentComponentComponent implements OnInit {
 
   isSOSDisabled(): boolean {
     if (
-      this.appointment.status == constants.appointStatusAlert
+      this.appointment.status != constants.appointStatusInProgress
     ) {
       return true;
     }

@@ -17,13 +17,13 @@
       <div class="panel-body">
         <div class="d-flex justify-content-end" role="group">
           <!-- <button mat-button>Basic</button> -->
-          <button class="btn btn-primary" (click)="doCheckIn()" [disabled]="isCheckInDisabled()">
+          <button class="btn btn-primary" [ngClass]="isCheckInDisabled() ? 'disabled' : ''" (click)="doCheckIn()" [disabled]="isCheckInDisabled()">
             Check In
           </button>
-          <button class="btn btn-success" (click)="doCheckOut()" [disabled]="isCheckoutButtonDisabled()">
+          <button class="btn btn-success" [ngClass]="isCheckoutButtonDisabled() ? 'disabled' : ''"  (click)="doCheckOut()" [disabled]="isCheckoutButtonDisabled()">
             Check Out
           </button>
-          <button class="btn btn-danger" (click)="doSOS()" [disabled]="isSOSDisabled()">
+          <button class="btn btn-danger" [ngClass]="isSOSDisabled() ? 'disabled' : ''" (click)="doSOS()" [disabled]="isSOSDisabled()">
             SOS
           </button>
         </div>
